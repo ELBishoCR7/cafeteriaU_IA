@@ -24,4 +24,5 @@ RUN python manage.py migrate
 
 # Comando para arrancar el servidor usando Gunicorn
 # Reemplaza 'nombre_de_tu_proyecto' por el nombre real de la carpeta que tiene el wsgi.py
+EXPOSE 8080
 CMD exec gunicorn --bind 0.0.0.0:$PORT --workers 1 --threads 8 --timeout 0 ms_ia.wsgi:application
